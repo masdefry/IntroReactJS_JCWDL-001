@@ -7,8 +7,8 @@ class Counting extends React.Component{
     }
 
     onCounting = () => {
-        var currentCount = this.state.count 
-        currentCount++ 
+        var currentCount = this.state.count // 0
+        currentCount++ // 0 -> 1
 
         this.setState({count: currentCount})
     }

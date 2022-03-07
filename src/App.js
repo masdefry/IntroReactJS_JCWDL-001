@@ -2,6 +2,7 @@ import State1 from './State';
 import Component1 from './ClassComponent'
 import Component2 from './FunctionComponent'
 import Counting from './Counting';
+import Sapa from './Sapa';
 
 function App() {
   return (
@@ -10,7 +11,8 @@ function App() {
       <Component2 />
       <State1 /> */}
 
-      <Counting />
+      {/* <Counting /> */}
+      <Sapa />
     </div>
   );
 }
