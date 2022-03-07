@@ -4,6 +4,7 @@ import Component2 from './FunctionComponent'
 import Counting from './Counting';
 import Sapa from './Sapa';
 import OnChange from './OnChange';
+import FetchData from './FetchData';
 
 function App() {
   return (
@@ -14,7 +15,8 @@ function App() {
 
       {/* <Counting /> */}
       {/* <Sapa /> */}
-      <OnChange />
+      {/* <OnChange /> */}
+      <FetchData />
     </div>
   );
 }
