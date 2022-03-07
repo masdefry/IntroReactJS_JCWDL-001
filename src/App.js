@@ -3,6 +3,7 @@ import Component1 from './ClassComponent'
 import Component2 from './FunctionComponent'
 import Counting from './Counting';
 import Sapa from './Sapa';
+import OnChange from './OnChange';
 
 function App() {
   return (
@@ -12,7 +13,8 @@ function App() {
       <State1 /> */}
 
       {/* <Counting /> */}
-      <Sapa />
+      {/* <Sapa /> */}
+      <OnChange />
     </div>
   );
 }

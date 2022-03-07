@@ -15,6 +15,22 @@ class Sapa extends React.Component{
     }
 
     render(){
+        if(this.state.nama === ''){
+            return(
+                <>
+                    <h1>
+                    Aplikasi Sapa
+                    </h1>
+                    <h1>
+                        Hello, Username!
+                    </h1>
+
+                    <input type="text" ref="myName" placeholder="Enter Your Name" />
+                    <input type="button" value="Submit" onClick={this.onClickButton} />
+                </>
+            )
+        }
+        
         return(
             <>
                 <h1>
