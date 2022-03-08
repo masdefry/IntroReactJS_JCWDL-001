@@ -8,15 +8,17 @@ class FetchData extends React.Component{
     }
 
     onFetchData = () => {
-        Axios.get('https://cat-fact.herokuapp.com/facts')
+        Axios.get('https://cat-fact.herokuapp.com/facts') // async await
         .then((res) => {
             this.setState({data: res.data})
+            alert('Hello')
             console.log('Respon Success')
         })
         .catch((err) => {
             console.log(err)
             console.log('Respon Error')
         })
+        alert(111)
     }
 
     render(){

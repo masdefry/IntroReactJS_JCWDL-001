@@ -17,8 +17,8 @@ function App() {
       {/* <Counting /> */}
       {/* <Sapa /> */}
       {/* <OnChange /> */}
-      {/* <FetchData /> */}
-      <LifeCycleMethod />
+      <FetchData />
+      {/* <LifeCycleMethod /> */}
     </div>
   );
 }

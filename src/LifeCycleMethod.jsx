@@ -21,11 +21,12 @@ class LifeCycleMethod extends React.Component{
     //     alert('Did Update Running!!!')
     // }
 
-    componentWillUnmount(){
-        alert('Did Unmount Running!!!')
-    }
+    // componentWillUnmount(){
+    //     alert('Did Unmount Running!!!')
+    // }
     render(){
-        // alert('Render Running!!!')
+        alert('Render Running!!!')
+        console.log('Render Running!!!')
         return(
             <>
                 <h3>
