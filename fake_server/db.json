@@ -1,28 +1,55 @@
 {
-    "users": [
-        {
-            "id": 1,
-            "username": "ryandefryan",
-            "password": "123123123", 
-            "email": "masdefry@gmail.com"
-        },
-        {
-            "id": 2,
-            "username": "kevin",
-            "password": "123123123", 
-            "email": "kevin@gmail.com"
-        },
-        {
-            "id": 3,
-            "username": "haekal",
-            "password": "123123123", 
-            "email": "haekal@gmail.com"
-        }
-    ],
-
-    "producst": [
-        {
-            
-        }
-    ]
+  "users": [
+    {
+      "id": 1,
+      "username": "ryandefryan",
+      "password": "123123123",
+      "email": "masdefry@gmail.com"
+    },
+    {
+      "id": 2,
+      "username": "kevin",
+      "password": "123123123",
+      "email": "kevin@gmail.com"
+    },
+    {
+      "id": 3,
+      "username": "haekal",
+      "password": "123123123",
+      "email": "haekal@gmail.com"
+    },
+    {
+      "username": "masdefry",
+      "password": "123123123",
+      "email": "masdefry@gmail.com",
+      "id": 4
+    },
+    {
+      "username": "safira",
+      "password": "123123123",
+      "email": "safira@gmail.com",
+      "id": 5
+    },
+    {
+      "username": "safira",
+      "password": "123123123",
+      "email": "safira@gmail.com",
+      "id": 6
+    },
+    {
+      "username": "a",
+      "password": "1",
+      "email": "a",
+      "id": 7
+    },
+    {
+      "username": "aisyah",
+      "password": "123123123",
+      "email": "aisyah@gmail.com",
+      "id": 8
+    }
+  ],
+  "producst": [
+    {}
+  ]
 }
