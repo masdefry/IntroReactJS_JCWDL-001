@@ -6,6 +6,7 @@ import Sapa from './Sapa';
 import OnChange from './OnChange';
 import FetchData from './FetchData';
 import LifeCycleMethod from './LifeCycleMethod';
+import FakeApi from './FakeAPI';
 
 function App() {
   return (
@@ -17,8 +18,9 @@ function App() {
       {/* <Counting /> */}
       {/* <Sapa /> */}
       {/* <OnChange /> */}
-      <FetchData />
+      {/* <FetchData /> */}
       {/* <LifeCycleMethod /> */}
+      <FakeApi />
     </div>
   );
 }
