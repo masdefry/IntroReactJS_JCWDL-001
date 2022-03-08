@@ -1,10 +1,8 @@
 {
   "users": [
     {
-      "id": 1,
       "username": "ryandefryan",
-      "password": "123123123",
-      "email": "masdefry@gmail.com"
+      "id": 1
     },
     {
       "id": 2,
@@ -37,9 +35,9 @@
       "id": 6
     },
     {
-      "username": "a",
-      "password": "1",
-      "email": "a",
+      "username": "rian",
+      "password": "333333333",
+      "email": "rian@gmail.com",
       "id": 7
     },
     {
@@ -47,6 +45,12 @@
       "password": "123123123",
       "email": "aisyah@gmail.com",
       "id": 8
+    },
+    {
+      "username": "defry",
+      "password": "321321321",
+      "email": "defry@gmail.com",
+      "id": 9
     }
   ],
   "producst": [

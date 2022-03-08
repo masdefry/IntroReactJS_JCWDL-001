@@ -5,7 +5,8 @@ class FakeApi extends React.Component{
     // CRUD (Create, Read, Update, Delete)
 
     state = {
-        data: null
+        data: null,
+        selectedId: null
     }
 
     componentDidMount(){
@@ -29,7 +30,8 @@ class FakeApi extends React.Component{
         // 3. Kirim ke Fake API
 
         // 1,
-        let username = this.refs.username.value 
+        let username = this.inputUsername.value 
+        console.log(username)
         let email = this.refs.email.value
         let password = this.refs.password.value
         
@@ -50,8 +52,53 @@ class FakeApi extends React.Component{
         }
     }
 
+    onSaveData = () => {
+        let username = this.refs.username.value
+        let email = this.refs.email.value
+        let password = this.refs.password.value
+
+        if(username && email && password){
+            Axios.put('http://localhost:5000/users/' + this.state.selectedId, {username, email, password})
+            .then((res) => {
+                if(res.status === 200){
+                    alert('Edit Data Success!')
+                    this.setState({selectedId: null})
+                    this.onFetchData()
+                }
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+        }else{
+            alert('Terdapat Data yang Kosong!')
+        }
+    }
+
     mapData = () => {
         let result = this.state.data.map((value, index) => {
+            if(this.state.selectedId === value.id){
+                return(
+                    <tr key={index}>
+                        <td>
+                            {value.id}
+                        </td>
+                        <td>
+                            <input type="text" ref="username" defaultValue={value.username} className="form-control" />
+                        </td>
+                        <td>
+                            <input type="text" ref="email" defaultValue={value.email} className="form-control" />
+                        </td>
+                        <td>
+                            <input type="text" ref="password" defaultValue={value.password} className="form-control" />
+                        </td>
+                        <td>
+                            <input type="button" value="Save" className='btn btn-success' onClick={this.onSaveData} />
+                            <input type="button" value="Cancel" className='btn btn-danger' onClick={() => this.setState({selectedId: null})} />
+                        </td>
+                    </tr>
+                )
+            }
+
             return(
                 <tr key={index}>
                     <td>
@@ -65,6 +112,10 @@ class FakeApi extends React.Component{
                     </td>
                     <td>
                         {value.password}
+                    </td>
+                    <td>
+                    <input type="button" value="Edit" className='btn btn-warning' onClick={() => this.setState({selectedId: value.id})} />
+                        <input type="button" value="Delete" className='btn btn-danger' />
                     </td>
                 </tr>
             )
@@ -84,10 +135,12 @@ class FakeApi extends React.Component{
 
         return(
             <div>
-                <div>
-                    <h1>
-                        Fetch Data Fake 
-                    </h1>
+                <div className='row justify-content-center'>
+                    <div className="col-6">
+                        <h1>
+                            Fetch Data Fake 
+                        </h1>
+                    </div>
                 </div>
 
                 <div className='row justify-content-center'>
@@ -97,7 +150,7 @@ class FakeApi extends React.Component{
                                 <h3>
                                     Add Data 
                                 </h3>
-                                <input type="text" placeholder="Enter Your Username" ref="username" className="form-control" />
+                                <input type="text" placeholder="Enter Your Username" ref={element => this.inputUsername = element} className="form-control" />
                                 <input type="text" placeholder="Enter Your Password" ref="password" className="form-control mt-3" />
                                 <input type="text" placeholder="Enter Your Email" ref="email" className="form-control mt-3" />
                                 <input type="button" value="Submit Data" className="btn btn-success mt-3" onClick={this.onPostData} />
@@ -106,20 +159,23 @@ class FakeApi extends React.Component{
                     </div>
                 </div>
 
-                <div>
-                    <table>
-                        <thead>
-                            <th> Id </th>
-                            <th> Username </th>
-                            <th> Email </th>
-                            <th> Password </th>
-                        </thead>
-                        <tbody>
-                            {
-                                this.mapData()
-                            }
-                        </tbody>
-                    </table>
+                <div className='row justify-content-center'>
+                    <div className='col-6'>
+                        <table className='table'>
+                            <thead>
+                                <th> Id </th>
+                                <th> Username </th>
+                                <th> Email </th>
+                                <th> Password </th>
+                                <th> Action </th>
+                            </thead>
+                            <tbody>
+                                {
+                                    this.mapData()
+                                }
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         )
