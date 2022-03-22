@@ -6,7 +6,8 @@ class FakeApi extends React.Component{
 
     state = {
         data: null,
-        selectedId: null
+        selectedId: null,
+        isSubmit: false
     }
 
     componentDidMount(){
@@ -30,6 +31,7 @@ class FakeApi extends React.Component{
         // 3. Kirim ke Fake API
 
         // 1,
+        this.setState({ isSubmit: true })
         let username = this.inputUsername.value 
         console.log(username)
         let email = this.refs.email.value
@@ -45,6 +47,7 @@ class FakeApi extends React.Component{
                     alert('Post Data Success!')
                     this.onFetchData()
                 }
+                this.setState({ isSubmit: false })
             })
             .catch((err) => {
                 console.log(err)
@@ -53,6 +56,7 @@ class FakeApi extends React.Component{
     }
 
     onSaveData = () => {
+        
         let username = this.refs.username.value
         let email = this.refs.email.value
         let password = this.refs.password.value
@@ -65,6 +69,8 @@ class FakeApi extends React.Component{
                     this.setState({selectedId: null})
                     this.onFetchData()
                 }
+
+                this.setState({ isSubmit: false })
             })
             .catch((err) => {
                 console.log(err)
@@ -134,9 +140,9 @@ class FakeApi extends React.Component{
         }
 
         return(
-            <div>
+            <div className='container-fluid'>
                 <div className='row justify-content-center'>
-                    <div className="col-6">
+                    <div className="col-6 py-5 text-center">
                         <h1>
                             Fetch Data Fake 
                         </h1>
@@ -153,7 +159,7 @@ class FakeApi extends React.Component{
                                 <input type="text" placeholder="Enter Your Username" ref={element => this.inputUsername = element} className="form-control" />
                                 <input type="text" placeholder="Enter Your Password" ref="password" className="form-control mt-3" />
                                 <input type="text" placeholder="Enter Your Email" ref="email" className="form-control mt-3" />
-                                <input type="button" value="Submit Data" className="btn btn-success mt-3" onClick={this.onPostData} />
+                                <input type="button" disabled={this.state.isSubmit} value={this.state.isSubmit? 'Loading' : 'Submid Data'} className="btn btn-success mt-3" onClick={this.onPostData} />
                             </div>
                         </div>
                     </div>

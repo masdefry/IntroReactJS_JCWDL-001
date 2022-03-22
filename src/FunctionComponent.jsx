@@ -1,14 +1,15 @@
-import React from 'react';
+// import React from 'react';
+// import { useState } from 'react;'
 
-function Component2(){
+// function Component2(){
 
-    [nama, setNama] = useState(null)
+//     [nama, setNama] = useState(null)
 
-    return(
-        <h1>
-            Ini Function Component
-        </h1>
-    )
-}
+//     return(
+//         <h1>
+//             Ini Function Component
+//         </h1>
+//     )
+// }
 
-export default Component2
+// export default Component2

@@ -4,7 +4,6 @@ import Component2 from './FunctionComponent'
 import Counting from './Counting';
 import Sapa from './Sapa';
 import OnChange from './OnChange';
-import FetchData from './FetchData';
 import LifeCycleMethod from './LifeCycleMethod';
 import FakeApi from './FakeAPI';
 
